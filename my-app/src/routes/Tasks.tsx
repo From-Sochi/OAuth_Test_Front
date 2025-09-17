@@ -1,11 +1,7 @@
 import { useState, useRef } from 'react';
 import '../index.css';
 
-const initialState = [
-    { id: '1', name: 'Work', done: false },
-    { id: '2', name: 'Study', done: false },
-    { id: '3', name: 'Shop', done: false },
-];
+const initialState: TaskProps[] = [];
 
 type TaskProps = {
     id: string;
