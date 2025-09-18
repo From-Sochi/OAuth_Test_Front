@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { type User, type LoginFormData } from '../types/auth';
+import '../styles/Dashboard.css';
 
 // Создаем интерфейс для ошибок, который допускает строковые сообщения
 interface FormErrors {

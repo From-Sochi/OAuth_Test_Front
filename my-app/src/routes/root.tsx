@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { getTasks } from '../forStorage';
-import '../index.css';
+import '../styles/Root.css'
 import { useAuth } from '../context/AuthContext';
 
 export async function loader() {

@@ -1,0 +1,380 @@
+/* ===== СТИЛИ ТАЙМЕРА ===== */
+.timer-container {
+    min-width: 600px;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideIn 0.5s ease;
+}
+
+.timer-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2d3748;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.time-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.time-group label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.time-group input {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 60px;
+}
+
+.time-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.time-group input:hover {
+    border-color: #c3cfe2;
+    transform: translateY(-1px);
+}
+
+.time-group input::placeholder {
+    color: #a0aec0;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.timer-buttons button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.timer-buttons button:first-child {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+}
+
+.timer-buttons button:first-child:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.timer-buttons button:nth-child(2),
+.timer-buttons button:nth-child(3) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.timer-buttons button:nth-child(2):hover,
+.timer-buttons button:nth-child(3):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.timer-buttons button:last-child {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    color: white;
+}
+
+.timer-buttons button:last-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4);
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+}
+
+.timer-buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.timer-buttons button:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.laps-container {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.laps-container h3 {
+    text-align: center;
+    margin-bottom: .3rem;
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.laps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.lap-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.lap-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.lap-time {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2d3748;
+    flex: 1;
+}
+
+.delete-lap-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+.delete-lap-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(245, 101, 101, 0.4);
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+}
+
+/* Анимация для появления кругов */
+@keyframes lapAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lap-item {
+    animation: lapAppear 0.3s ease forwards;
+}
+
+.lap-item:nth-child(odd) {
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+}
+
+.lap-item:nth-child(even) {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+/* Стили для скроллбара в списке кругов */
+.laps-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.laps-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.laps-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+}
+
+.laps-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Медиа-запросы для таймера */
+@media (max-width: 768px) {
+    .timer-container {
+        min-width: auto;
+        max-width: 95%;
+        margin: .5rem;
+        padding: 1.5rem;
+    }
+
+    .timer-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .time-group {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .time-group input {
+        width: 50px;
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .timer-buttons {
+        gap: 0.5rem;
+    }
+
+    .timer-buttons button {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        min-width: 100px;
+    }
+
+    .laps-container {
+        padding: 1rem;
+    }
+
+    .lap-item {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .lap-time {
+        font-size: 1rem;
+    }
+
+    .delete-lap-btn {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer-container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .timer-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .time-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .time-group label {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .timer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timer-buttons button {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .laps-list {
+        max-height: 200px;
+    }
+}
+
+/* Стили для разделителей в time-group */
+.time-group span {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+/* Стили для состояний фокуса */
+.time-group input:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Стили для placeholder в input */
+.time-group input::-webkit-outer-spin-button,
+.time-group input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.time-group input[type=number] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    min-width: 220px;
+    display: inline-block;
+    text-align: center;
+}
+
+.milliseconds {
+    font-size: 2rem;
+    opacity: 0.8;
+}

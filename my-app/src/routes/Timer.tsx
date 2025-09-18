@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import '../styles/Timer.css';
 
 interface LapTime {
     id: number;

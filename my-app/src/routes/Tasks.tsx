@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import '../index.css';
+import '../styles/Tasks.css';
+
 
 const initialState: TaskProps[] = [];
 
