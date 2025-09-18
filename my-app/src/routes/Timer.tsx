@@ -120,7 +120,7 @@ function Timer() {
 
     return (
         <div className="timer-container">
-            <h2>Timer:</h2>
+            <h2>Секундомер:</h2>
             <hr />
 
             {/* Блок отображения времени */}

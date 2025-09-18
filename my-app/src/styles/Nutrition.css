@@ -1,0 +1,314 @@
+/* ===== СТИЛИ ДЛЯ КОМПОНЕНТА NUTRITION ===== */
+.nutrition-container {
+    min-width: 600px;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideIn 0.5s ease;
+}
+
+.nutrition-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2d3748;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-container p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.nutrition-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.nutrition-container select,
+.nutrition-container input {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.nutrition-container select:focus,
+.nutrition-container input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.nutrition-container select:hover,
+.nutrition-container input:hover {
+    border-color: #c3cfe2;
+}
+
+.nutrition-container small {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nutrition-container button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0.5rem 0;
+}
+
+.nutrition-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.nutrition-container button:active {
+    transform: translateY(0);
+}
+
+.nutrition-container button:last-of-type {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.nutrition-container button:last-of-type:hover {
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.laps-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+}
+
+.laps-container h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.laps-container p {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.laps-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для полезных советов */
+.laps-container p br {
+    margin-bottom: 0.5rem;
+    display: block;
+    content: "";
+}
+
+.laps-container p ✅,
+.laps-container p ❌ {
+    font-weight: 600;
+}
+
+.laps-container p ✅ {
+    color: #38a169;
+}
+
+.laps-container p ❌ {
+    color: #e53e3e;
+}
+
+/* ===== МЕДИА-ЗАПРОСЫ ДЛЯ КОМПОНЕНТА NUTRITION ===== */
+
+/* 27" Мониторы и выше (2560px+) */
+@media (min-width: 2560px) {
+    .nutrition-container {
+        max-width: 1200px;
+        padding: 3rem;
+        margin: 3rem auto;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 3.5rem;
+    }
+    
+    .nutrition-container p {
+        font-size: 1.3rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .nutrition-container button {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Ноутбуки (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .nutrition-container {
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 2.2rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Планшеты (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nutrition-container {
+        max-width: 90%;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 2rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Большие телефоны (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .nutrition-container {
+        max-width: 95%;
+        margin: 1rem auto;
+        padding: 1.2rem;
+        border-radius: 16px;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .nutrition-container button {
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Телефоны (375px - 575px) */
+@media (min-width: 375px) and (max-width: 575px) {
+    .nutrition-container {
+        max-width: 100%;
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 1.6rem;
+    }
+    
+    .nutrition-container p {
+        font-size: 1rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .nutrition-container button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .laps-container {
+        padding: 1rem;
+    }
+    
+    .laps-container h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Маленькие телефоны (до 374px) */
+@media (max-width: 374px) {
+    .nutrition-container {
+        margin: 0.3rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+    
+    .nutrition-container h1 {
+        font-size: 1.4rem;
+    }
+    
+    .nutrition-container p {
+        font-size: 0.9rem;
+    }
+    
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .nutrition-container button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .laps-container {
+        padding: 0.8rem;
+    }
+    
+    .laps-container h2 {
+        font-size: 1.1rem;
+    }
+    
+    .laps-container p {
+        font-size: 0.9rem;
+    }
+}

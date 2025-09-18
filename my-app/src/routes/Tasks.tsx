@@ -106,13 +106,13 @@ function Tasks() {
     return (
         <div className="todo-container">
             <h1 className="todo-header">
-                {taskList.length > 0 ? 'Может хватит?' : 'Накидай-ка себе задач, лентяй...'}
+                {taskList.length > 0 ? 'Может хватит?' : 'Добавь новое упражнение, лентяй...'}
             </h1>
 
             <div className="add-task-container">
                 <input
                     type="text"
-                    placeholder='Add new task...'
+                    placeholder='Add a new workout...'
                     value={newTask}
                     className="add-task-input"
                     onChange={(e) => setNewTask(e.target.value)}
