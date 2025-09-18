@@ -1,7 +1,7 @@
 /* ===== СТИЛИ ДЛЯ КОМПОНЕНТА NUTRITION ===== */
 .nutrition-container {
-    min-width: 600px;
     max-width: 800px;
+    min-height: 500px;
     margin: 2rem auto;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.95);
@@ -10,6 +10,8 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: slideIn 0.5s ease;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .nutrition-container h1 {
@@ -68,10 +70,12 @@
     padding: 0.75rem 1.5rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    border: none;
     border-radius: 8px;
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 0.5rem 0;
+    cursor: pointer;
 }
 
 .nutrition-container button:hover {
@@ -131,17 +135,44 @@
     content: "";
 }
 
-.laps-container p ✅,
-.laps-container p ❌ {
+.laps-container p .positive {
     font-weight: 600;
-}
-
-.laps-container p ✅ {
     color: #38a169;
 }
 
-.laps-container p ❌ {
+.laps-container p .negative {
+    font-weight: 600;
     color: #e53e3e;
+}
+
+/* Анимация */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.laps-container:last-child {
+    min-height: auto;
+    overflow: hidden;
+}
+
+.laps-container:last-child p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
 }
 
 /* ===== МЕДИА-ЗАПРОСЫ ДЛЯ КОМПОНЕНТА NUTRITION ===== */
@@ -153,21 +184,21 @@
         padding: 3rem;
         margin: 3rem auto;
     }
-    
+
     .nutrition-container h1 {
         font-size: 3.5rem;
     }
-    
+
     .nutrition-container p {
         font-size: 1.3rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         font-size: 1.2rem;
         padding: 1rem 1.5rem;
     }
-    
+
     .nutrition-container button {
         font-size: 1.1rem;
         padding: 1rem 2rem;
@@ -181,11 +212,11 @@
         margin: 1.5rem auto;
         padding: 1.5rem;
     }
-    
+
     .nutrition-container h1 {
         font-size: 2.2rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         padding: 0.6rem 0.8rem;
@@ -196,18 +227,24 @@
 /* Планшеты (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .nutrition-container {
-        max-width: 90%;
-        margin: 1.5rem auto;
+        width: 95%;
+        min-height: auto;
+        margin: 1rem auto;
         padding: 1.5rem;
     }
-    
+
     .nutrition-container h1 {
         font-size: 2rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .laps-container:last-child p {
+        max-height: 100px;
         font-size: 0.9rem;
     }
 }
@@ -215,22 +252,23 @@
 /* Большие телефоны (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
     .nutrition-container {
-        max-width: 95%;
+        width: 95%;
         margin: 1rem auto;
         padding: 1.2rem;
         border-radius: 16px;
+        min-height: auto;
     }
-    
+
     .nutrition-container h1 {
         font-size: 1.8rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         padding: 0.6rem 0.8rem;
         font-size: 0.9rem;
     }
-    
+
     .nutrition-container button {
         padding: 0.6rem 1rem;
     }
@@ -239,35 +277,36 @@
 /* Телефоны (375px - 575px) */
 @media (min-width: 375px) and (max-width: 575px) {
     .nutrition-container {
-        max-width: 100%;
+        width: calc(100% - 1rem);
         margin: 0.5rem;
         padding: 1rem;
         border-radius: 12px;
+        min-height: auto;
     }
-    
+
     .nutrition-container h1 {
         font-size: 1.6rem;
     }
-    
+
     .nutrition-container p {
         font-size: 1rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         padding: 0.5rem 0.6rem;
         font-size: 0.9rem;
     }
-    
+
     .nutrition-container button {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
     }
-    
+
     .laps-container {
         padding: 1rem;
     }
-    
+
     .laps-container h2 {
         font-size: 1.3rem;
     }
@@ -276,39 +315,89 @@
 /* Маленькие телефоны (до 374px) */
 @media (max-width: 374px) {
     .nutrition-container {
+        width: calc(100% - 0.6rem);
         margin: 0.3rem;
         padding: 0.8rem;
         border-radius: 10px;
+        min-height: auto;
     }
-    
+
     .nutrition-container h1 {
         font-size: 1.4rem;
     }
-    
+
     .nutrition-container p {
         font-size: 0.9rem;
     }
-    
+
     .nutrition-container select,
     .nutrition-container input {
         padding: 0.4rem 0.5rem;
         font-size: 0.85rem;
     }
-    
+
     .nutrition-container button {
         padding: 0.4rem 0.6rem;
         font-size: 0.8rem;
     }
-    
+
     .laps-container {
         padding: 0.8rem;
     }
-    
+
     .laps-container h2 {
         font-size: 1.1rem;
     }
-    
+
     .laps-container p {
         font-size: 0.9rem;
+    }
+}
+
+/* Специальный медиа-запрос для исправления проблем на экранах меньше 620px */
+@media (max-width: 620px) {
+    .nutrition-container {
+        min-height: auto;
+        padding: 1.5rem;
+        margin: 1rem auto;
+        width: calc(100% - 2rem);
+    }
+
+    .nutrition-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .nutrition-container p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nutrition-container form {
+        gap: 0.8rem;
+    }
+
+    .nutrition-container select,
+    .nutrition-container input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .nutrition-container button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .laps-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .laps-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .laps-container:last-child p {
+        max-height: 80px;
+        font-size: 0.85rem;
     }
 }
