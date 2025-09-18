@@ -36,7 +36,7 @@ function Root() {
 					className={`${isActive('tasks') ? 'active' : ''} ${!authState.isAuthenticated ? 'disabled' : ''}`}
 					style={{ pointerEvents: !authState.isAuthenticated ? 'none' : 'auto', opacity: !authState.isAuthenticated ? 0.5 : 1 }}
 				>
-					Tasks
+					Задачи
 				</Link>
 
 				<Link
@@ -44,7 +44,7 @@ function Root() {
 					className={`${isActive('timer') ? 'active' : ''} ${!authState.isAuthenticated ? 'disabled' : ''}`}
 					style={{ pointerEvents: !authState.isAuthenticated ? 'none' : 'auto', opacity: !authState.isAuthenticated ? 0.5 : 1 }}
 				>
-					Timer
+					Секундомер
 				</Link>
 
 				<Link
@@ -52,7 +52,7 @@ function Root() {
 					className={`${isActive('nutrition') ? 'active' : ''} ${!authState.isAuthenticated ? 'disabled' : ''}`}
 					style={{ pointerEvents: !authState.isAuthenticated ? 'none' : 'auto', opacity: !authState.isAuthenticated ? 0.5 : 1 }}
 				>
-					Nutrition
+					Питание
 				</Link>
 
 				{authState.isAuthenticated && (
