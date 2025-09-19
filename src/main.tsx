@@ -10,12 +10,17 @@ import Timer from './routes/Timer.tsx';
 import Nutrition from './routes/Nutrition.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import Redirect from './components/Redirect';
 
 const router = createHashRouter([
     {
         path: "/*",
         element: <Root />,
         children: [
+            {
+                index: true,
+                element: <Redirect />,
+            },
             {
                 path: "dashboard/1",
                 element: <Dashboard />,
