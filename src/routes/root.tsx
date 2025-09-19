@@ -13,7 +13,6 @@ function Root() {
 	const navigate = useNavigate();
 	const { authState, logout } = useAuth();
 
-	// Функция для проверки активной ссылки
 	const isActive = (path: string) => {
 		return location.pathname.includes(path);
 	};
