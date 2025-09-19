@@ -26,7 +26,7 @@ function Root() {
 	return (
 		<>
 			<nav>
-				<Link to={`/`} className={isActive('dashboard') ? 'active' : ''}>
+				<Link to={`/dashboard/1`} className={isActive('dashboard') ? 'active' : ''}>
 					Авторизация
 				</Link>
 
